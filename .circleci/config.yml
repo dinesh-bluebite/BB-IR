@@ -20,6 +20,7 @@ jobs:
           name: Getting the Code
           command: |
             ls -al
+            pwd
             echo '^^^Your repo files^^^'
   # running a node container
   Using-Node:
