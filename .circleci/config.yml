@@ -1,13 +1,13 @@
 version: 2.1
 references:
-  main-branch-filter: &main-branch-filter
-        filters:
-            branches:
-                only: /^main*/
-  develop-branch-filter: &develop-branch-filter
-        filters:
-            branches:
-                only: /^develop*/              
+    main-branch-filter: &main-branch-filter
+          filters:
+              branches:
+                  only: /^main*/
+    develop-branch-filter: &develop-branch-filter
+          filters:
+              branches:
+                  only: /^develop*/              
 jobs:
   # running commands on a basic image
   Hello-World:
