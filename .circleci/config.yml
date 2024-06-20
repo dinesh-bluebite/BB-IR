@@ -55,7 +55,7 @@ workflows:
           <<: *main-branch-filter
       - Fetch-Code:
           <<: *develop-branch-filter
-      - Using-Node:
+      - Using-Node
       - Hold-for-Approval:
           type: approval
       - Now-Complete:
