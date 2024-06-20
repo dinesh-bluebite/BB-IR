@@ -1,4 +1,13 @@
 version: 2.1
+references:
+  main-branch-filter: &main-branch-filter
+        filters:
+            branches:
+                only: /^main*/
+  develop-branch-filter: &develop-branch-filter
+        filters:
+            branches:
+                only: /^develop*/              
 jobs:
   # running commands on a basic image
   Hello-World:
@@ -42,18 +51,13 @@ jobs:
 workflows:
   Dinesh-Workflow:
     jobs:
-      - Hello-World
+      - Hello-World:
+          <<: *main-branch-filter
       - Fetch-Code:
-          requires:
-            - Hello-World
+          <<: *develop-branch-filter
       - Using-Node:
-          requires:
-            - Fetch-Code
       - Hold-for-Approval:
           type: approval
-          requires:
-            - Using-Node
-            - Fetch-Code
       - Now-Complete:
           requires:
             - Hold-for-Approval      
