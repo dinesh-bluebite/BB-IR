@@ -15,7 +15,7 @@ on:
 
 permissions: read-all
 env:
-  GH_TOKEN: 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
+  GITHUB_TOKEN: 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
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -32,7 +32,7 @@ jobs:
       - name: List all tags
         run: gh release list --json tagName
         env:
-          GH_TOKEN: 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
+          GITHUB_TOKEN: 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
       
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
