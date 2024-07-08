@@ -30,7 +30,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: List all tags
-        run: gh release list --json
+        run: gh release list --json tagName
         env:
           GH_TOKEN: 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
       
