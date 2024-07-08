@@ -28,6 +28,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: List all tags
         run: gh release list --json tagName --jq '.[] | .tagName'
+        env:
+          GH_TOKEN: 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
+        
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
