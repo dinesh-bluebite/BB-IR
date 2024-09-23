@@ -52,7 +52,7 @@ jobs:
 workflows:
   Dinesh-Workflow:
     jobs:
-      - Terraform-Download:
+      - Terraform-Download
       - Fetch-Code:
           requires:
             - Terraform-Download
