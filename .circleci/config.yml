@@ -15,10 +15,10 @@ jobs:
       - image: cimg/base:2021.04
     steps:
       - run:
-          name: Saying Hello
+          name: Downloading Terraform
           command: |
             echo 'Downloading terraform...'
-            curl --silent --show-error terraform.zip http://releases.hashicorp.com/terraform/1.9.6/terraform_1.9.6_windows_386.zip
+            curl --silent --show-error http://releases.hashicorp.com/terraform/1.9.6/terraform_1.9.6_windows_386.zip
   # fetching code from the repo
   Fetch-Code:
     docker:
@@ -53,4 +53,5 @@ workflows:
   Dinesh-Workflow:
     jobs:
       - Terraform-Download
-      - Fetch-Code
+      - Fetch-Code:
+          requires: Terraform-Download
