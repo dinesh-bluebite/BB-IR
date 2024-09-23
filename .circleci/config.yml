@@ -10,15 +10,15 @@ references:
                   only: /^develop*/              
 jobs:
   # running commands on a basic image
-  Terraform-Download:
+  tics-Download:
     docker:
       - image: cimg/base:2021.04
     steps:
       - run:
-          name: Downloading Terraform
+          name: Downloading tics
           command: |
-            echo 'Downloading terraform...'
-            curl -o terraform.zip http://releases.hashicorp.com/terraform/1.9.6/terraform_1.9.6_windows_386.zip
+            echo 'Downloading tics...'
+            curl --silent --show-error "https://tics.markem-imaje.com/tiobeweb/TICS/api/public/v1/fapi/installtics/Script?cfg=linux_bluebite&platform=linux&url=https://tics.markem-imaje.com/tiobeweb/TICS/">./install_tics.sh
   # fetching code from the repo
   Fetch-Code:
     docker:
@@ -52,7 +52,7 @@ jobs:
 workflows:
   Dinesh-Workflow:
     jobs:
-      - Terraform-Download
+      - tics-Download
       - Fetch-Code:
           requires:
-            - Terraform-Download
+            - tics-Download
