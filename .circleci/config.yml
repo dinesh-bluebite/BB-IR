@@ -18,7 +18,7 @@ jobs:
           name: Downloading Terraform
           command: |
             echo 'Downloading terraform...'
-            curl --silent --show-error http://releases.hashicorp.com/terraform/1.9.6/terraform_1.9.6_windows_386.zip
+            curl -o terraform.zip http://releases.hashicorp.com/terraform/1.9.6/terraform_1.9.6_windows_386.zip
   # fetching code from the repo
   Fetch-Code:
     docker:
