@@ -10,7 +10,7 @@ references:
                   only: /^develop*/              
 jobs:
   # running commands on a basic image
-  Hello-World:
+  Terraform-Download:
     docker:
       - image: cimg/base:2021.04
     steps:
@@ -51,13 +51,4 @@ jobs:
 workflows:
   Dinesh-Workflow:
     jobs:
-      - Hello-World:
-          <<: *main-branch-filter
-      - Fetch-Code:
-          <<: *develop-branch-filter
-      - Using-Node
-      - Hold-for-Approval:
-          type: approval
-      - Now-Complete:
-          requires:
-            - Hold-for-Approval      
+      - Terraform-Download    
