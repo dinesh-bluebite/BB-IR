@@ -54,4 +54,5 @@ workflows:
     jobs:
       - Terraform-Download:
       - Fetch-Code:
-          requires: Terraform-Download
+          requires:
+            - Terraform-Download
