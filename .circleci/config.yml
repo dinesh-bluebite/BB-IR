@@ -17,8 +17,8 @@ jobs:
       - run:
           name: Saying Hello
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            echo 'Downloading terraform...'
+            curl --silent --show-error terraform.zip http://releases.hashicorp.com/terraform/1.9.6/terraform_1.9.6_windows_386.zip
   # fetching code from the repo
   Fetch-Code:
     docker:
@@ -30,6 +30,7 @@ jobs:
           command: |
             ls -al
             pwd
+            echo 'Running terraform...'
             echo '^^^Your repo files^^^'
   # running a node container
   Using-Node:
@@ -51,4 +52,5 @@ jobs:
 workflows:
   Dinesh-Workflow:
     jobs:
-      - Terraform-Download    
+      - Terraform-Download
+      - Fetch-Code
