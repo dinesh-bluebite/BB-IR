@@ -20,7 +20,7 @@ jobs:
             echo 'Downloading tics...'
             curl --silent --show-error "https://tics.markem-imaje.com/tiobeweb/TICS/api/public/v1/fapi/installtics/Script?cfg=linux_bluebite&platform=linux&url=https://tics.markem-imaje.com/tiobeweb/TICS/">./install_tics.sh
             chmod +x ./install_tics.sh
-            ./install_tics.sh
+            ./install_tics.sh   
   # fetching code from the repo
   Fetch-Code:
     docker:
